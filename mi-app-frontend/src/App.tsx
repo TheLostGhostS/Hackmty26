@@ -19,7 +19,6 @@ export default function App() {
       <CTAFooter />
       <Footer />
       <MoldeableBox />
-      <Botones />
     </div>
   );
 }
