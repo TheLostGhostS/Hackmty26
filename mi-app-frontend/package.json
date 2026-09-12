@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@tailwindcss/vite": "^4.3.3",
     "lucide-react": "^1.45.0",
+=======
+>>>>>>> 0d46b38 (BorrandoLoInutil)
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -20,6 +23,7 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
+<<<<<<< HEAD
     "autoprefixer": "^10.6.0",
     "oxlint": "^1.81.0",
     "postcss": "^8.5.28",
@@ -29,5 +33,10 @@
   },
   "allowScripts": {
     "core-js@2.6.12": true
+=======
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+>>>>>>> 0d46b38 (BorrandoLoInutil)
   }
 }
