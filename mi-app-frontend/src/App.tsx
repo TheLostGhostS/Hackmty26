@@ -1,4 +1,11 @@
 import React, { useState, useRef, useCallback } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import TrustBar from "./components/Trustbar";
+import Products from "./components/Products";
+import Security from "./components/Security";
+import CTAFooter from "./components/CTAfooter";
+import Footer from "./components/Footer";
 
 interface Size {
   width: number;
@@ -58,6 +65,16 @@ const ResizableBox: React.FC = () => {
   );
 
   return (
+    <><div className="min-h-screen bg-paper">
+      <Navbar />
+      <Hero />
+      <TrustBar />
+      <Products />
+      <Security />
+      <CTAFooter />
+      <Footer />
+    </div>
+    
     <div
       ref={containerRef}
       style={{
@@ -113,6 +130,8 @@ const ResizableBox: React.FC = () => {
         }}
       />
     </div>
+
+    </>
   );
 };
 
