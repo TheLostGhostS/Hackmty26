@@ -1,0 +1,46 @@
+                    ┌──────────────┐
+                    │    USUARIO   │
+                    └──────┬───────┘
+                           │
+                       Mensaje
+                           ↓
+                    ┌──────────────┐
+                    │   BACKEND    │
+                    │              │
+                    │ Enriquece    │
+                    │ el contexto  │
+                    └──────┬───────┘
+                           │
+             ┌─────────────┼─────────────┐
+             ↓             ↓             ↓
+        Base de datos   Mensaje      Interacción
+             │
+             └─────────────┬─────────────┘
+                           ↓
+                    ┌──────────────┐
+                    │   LLM + MCP  │
+                    │              │
+                    │ Interpreta   │
+                    │ Decide       │
+                    │ Orquesta     │
+                    └──────┬───────┘
+                           ↓
+                    ┌──────────────┐
+                    │    A2UI      │
+                    │    JSON      │
+                    └──────┬───────┘
+                           ↓
+                    ┌──────────────┐
+                    │ UI GENERADA  │
+                    │              │
+                    │ Slider       │
+                    │ Chart        │
+                    │ Button       │
+                    │ Card         │
+                    └──────┬───────┘
+                           ↓
+                    Usuario interactúa
+                           ↓
+                         Acción
+                           │
+                           └──────────→ Backend

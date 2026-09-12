@@ -1,0 +1,320 @@
+Descripción de cada bloque:
+
+| Bloque                                     | Descripción                                                                                                                                                                    |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **1. Identidad y perfil**                  | Contiene la información básica y relativamente estable del usuario que permite identificarlo y darle contexto para personalizar la experiencia.                                |
+| **2. Realidad financiera**                 | Representa la situación financiera real y verificable del usuario: sus productos financieros, movimientos, ingresos y obligaciones.                                            |
+| **3. Inteligencia financiera derivada**    | Contiene métricas, patrones y análisis calculados a partir de la información financiera del usuario, como tendencias de gasto, capacidad de ahorro o utilización de crédito.   |
+| **4. Objetivos e intenciones del usuario** | Representa lo que el usuario quiere conseguir o cambiar financieramente, como ahorrar, invertir, comprar algo, reducir gastos o pagar una deuda.                               |
+| **5. Preferencias de experiencia**         | Contiene las preferencias del usuario sobre cómo quiere interactuar con el sistema, como nivel de detalle, formato o estilo de comunicación.                                   |
+| **6. Contexto de la interacción**          | Representa lo que está ocurriendo en la interacción actual, como la pantalla, producto seleccionado, período, filtros, acción reciente o tarea que está realizando el usuario. |
+
+
+Tipos de datos:
+
+| Tipo                          | Descripción                                                                                                                                                                                |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **[HECHO]**                   | Información real, verificable y observable sobre el usuario, sus productos o sus operaciones. Representa lo que **es o ha ocurrido**.                                                      |
+| **[DATO DERIVADO]**           | Información obtenida mediante cálculos, agrupaciones, comparaciones o análisis realizados sobre uno o varios hechos. Representa lo que **podemos concluir o medir a partir de los datos**. |
+| **[OBJETIVO / INTENCIÓN]**    | Información que representa lo que el usuario **quiere conseguir, cambiar o hacer**, incluyendo metas, planes, preferencias financieras e intenciones expresadas.                           |
+| **[CONTEXTO DE INTERACCIÓN]** | Información temporal relacionada con la **situación actual de la interacción**, como la pantalla, producto seleccionado, filtros, acción reciente o tarea que está realizando el usuario.  |
+
+
+¿Cómo se mueven los datos?
+
+                         ┌─────────────────────┐
+                         │       USUARIO       │
+                         └──────────┬──────────┘
+                                    │
+             ┌──────────────────────┼──────────────────────┐
+             │                      │                      │
+             ▼                      ▼                      ▼
+      ┌──────────────┐      ┌───────────────┐      ┌───────────────┐
+      │    PERFIL    │      │   PRODUCTOS   │      │   OBJETIVOS   │
+      │   [HECHO]    │      │    [HECHO]    │      │ [INTENCIÓN]   │
+      └──────────────┘      └───────┬───────┘      └───────┬───────┘
+                                    │                      │
+                                    │                      │
+                                    ▼                      │
+                            ┌───────────────┐              │
+                            │   ACTIVIDAD   │              │
+                            │  FINANCIERA   │              │
+                            │    [HECHO]    │              │
+                            └───────┬───────┘              │
+                                    │                      │
+                                    ▼                      │
+                         ┌─────────────────────┐           │
+                         │    INTELIGENCIA     │◄──────────┘
+                         │     FINANCIERA      │
+                         │   [DERIVADO]        │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │     PROGRESO /      │
+                         │     ANÁLISIS        │
+                         │    [DERIVADO]       │
+                         └─────────────────────┘
+
+
+                  ┌─────────────────────────────┐
+                  │   CONTEXTO DE INTERACCIÓN   │
+                  │         [CONTEXTO]          │
+                  └──────────────┬──────────────┘
+                                 │
+                 ┌───────────────┼───────────────┐
+                 ▼               ▼               ▼
+            Pantalla         Producto         Acción
+           actual           elegido          reciente
+
+
+
+BASE DE DATOS PROVICIONAL
+
+USUARIO
+│
+├──────────────────────────────────────────────────────────────────────────────┐
+│                                                                              │
+│  1. IDENTIDAD Y PERFIL                                                      │
+│  │                                                                           │
+│  ├── user_id ........................................ [HECHO]                │
+│  ├── nombre ......................................... [HECHO]                │
+│  ├── fecha_nacimiento ................................ [HECHO]                │
+│  ├── edad ............................................ [HECHO / DERIVABLE]   │
+│  ├── ocupación ....................................... [HECHO]                │
+│  ├── ciudad / región ................................ [HECHO]                │
+│  ├── estado civil .................................... [HECHO]                │
+│  └── información de personalización relevante                                |
+|      (dependientes económicos u otras........)....... [HECHO]                │
+│                                                                              │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  2. REALIDAD FINANCIERA                                                     │
+│  │                                                                           │
+│  ├───────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                       │  │
+│  │  2.1 PRODUCTOS FINANCIEROS                                            │  │
+│  │  │                                                                    │  │
+│  │  ├── Producto                                                          │  │
+│  │  │   ├── product_id ............................... [HECHO]            │  │
+│  │  │   ├── tipo ..................................... [HECHO]            │  │
+│  │  │   ├── nombre ................................... [HECHO]            │  │
+│  │  │   ├── estado ................................... [HECHO]            │  │
+│  │  │   └── fecha_alta ................................ [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  ├── CUENTAS                                                           │  │
+│  │  │   ├── account_id ............................... [HECHO]            │  │
+│  │  │   ├── tipo ..................................... [HECHO]            │  │
+│  │  │   ├── nombre ................................... [HECHO]            │  │
+│  │  │   ├── estado ................................... [HECHO]            │  │
+│  │  │   ├── fecha_alta ................................ [HECHO]            │  │
+│  │  │   ├── moneda ................................... [HECHO]            │  │
+│  │  │   ├── saldo .................................... [HECHO]            │  │
+│  │  │   └── saldo_disponible .......................... [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  ├── TARJETAS DE DÉBITO                                                │  │
+│  │  │   ├── card_id .................................. [HECHO]            │  │
+│  │  │   ├── tipo ..................................... [HECHO]            │  │
+│  │  │   ├── estado ................................... [HECHO]            │  │
+│  │  │   ├── cuenta_asociada ........................... [HECHO]            │  │
+│  │  │   └── fecha_alta ................................ [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  ├── TARJETAS DE CRÉDITO                                                │  │
+│  │  │   ├── card_id .................................. [HECHO]            │  │
+│  │  │   ├── tipo ..................................... [HECHO]            │  │
+│  │  │   ├── estado ................................... [HECHO]            │  │
+│  │  │   ├── límite_credito ............................. [HECHO]            │  │
+│  │  │   ├── crédito_disponible ......................... [HECHO]            │  │
+│  │  │   ├── saldo_utilizado ............................ [HECHO]            │  │
+│  │  │   ├── saldo_a_pagar .............................. [HECHO]            │  │
+│  │  │   ├── pago_mínimo ................................ [HECHO]            │  │
+│  │  │   ├── fecha_corte ................................ [HECHO]            │  │
+│  │  │   ├── fecha_pago ................................ [HECHO]            │  │
+│  │  │   └── tasa_interés ............................... [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  ├── CRÉDITOS                                                          │  │
+│  │  │   ├── credit_id ................................. [HECHO]            │  │
+│  │  │   ├── tipo ...................................... [HECHO]            │  │
+│  │  │   ├── estado .................................... [HECHO]            │  │
+│  │  │   ├── monto_original .............................. [HECHO]            │  │
+│  │  │   ├── saldo_pendiente ............................. [HECHO]            │  │
+│  │  │   ├── pago_mensual ............................... [HECHO]            │  │
+│  │  │   ├── tasa ....................................... [HECHO]            │  │
+│  │  │   ├── plazo ...................................... [HECHO]            │  │
+│  │  │   ├── pagos_restantes ............................ [HECHO]            │  │
+│  │  │   └── próxima_fecha_de_pago ....................... [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  ├── INVERSIONES                                                       │  │
+│  │  │   ├── investment_id .............................. [HECHO]            │  │
+│  │  │   ├── tipo_instrumento ........................... [HECHO]            │  │
+│  │  │   ├── monto_invertido ............................ [HECHO]            │  │
+│  │  │   ├── valor_actual ................................ [HECHO]            │  │
+│  │  │   ├── rendimiento ................................ [HECHO]            │  │
+│  │  │   ├── fecha_inicio ............................... [HECHO]            │  │
+│  │  │   ├── liquidez ................................... [HECHO]            │  │
+│  │  │   └── estado ..................................... [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  └── SEGUROS                                                          │  │
+│  │      ├── insurance_id ............................... [HECHO]            │  │
+│  │      ├── tipo ....................................... [HECHO]            │  │
+│  │      ├── cobertura .................................. [HECHO]            │  │
+│  │      ├── prima ...................................... [HECHO]            │  │
+│  │      ├── vigencia ................................... [HECHO]            │  │
+│  │      └── estado ..................................... [HECHO]            │  │
+│  │                                                                       │  │
+│  ├───────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ├───────────────────────────────────────────────────────────────────────┐  │
+│  │                                                                       │  │
+│  │  2.2 ACTIVIDAD FINANCIERA                                              │  │
+│  │  │                                                                    │  │
+│  │  ├── TRANSACCIONES                                                     │  │
+│  │  │   ├── transaction_id ............................ [HECHO]            │  │
+│  │  │   ├── product_id ................................. [HECHO]            │  │
+│  │  │   ├── fecha ..................................... [HECHO]            │  │
+│  │  │   ├── monto ..................................... [HECHO]            │  │
+│  │  │   ├── tipo (cargo/abono) ........................ [HECHO]            │  │
+│  │  │   ├── comercio .................................. [HECHO]            │  │
+│  │  │   ├── categoría ................................ [HECHO]            │  │
+│  │  │   ├── descripción ............................... [HECHO]            │  │
+│  │  │   ├── moneda ................................... [HECHO]            │  │
+│  │  │   ├── estado ................................... [HECHO]            │  │
+│  │  │   └── ubicación ................................ [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  ├── INGRESOS                                                          │  │
+│  │  │   ├── income_id ................................ [HECHO]            │  │
+│  │  │   ├── fecha .................................... [HECHO]            │  │
+│  │  │   ├── monto .................................... [HECHO]            │  │
+│  │  │   ├── fuente ................................... [HECHO]            │  │
+│  │  │   ├── frecuencia ............................... [HECHO]            │  │
+│  │  │   ├── cuenta_destino ............................ [HECHO]            │  │
+│  │  │   └── naturaleza (nómina, transferencia, etc.) . [HECHO]            │  │
+│  │  │                                                                    │  │
+│  │  └── PAGOS / OBLIGACIONES                                               │  │
+│  │      ├── payment_id ................................ [HECHO]            │  │
+│  │      ├── tipo ...................................... [HECHO]            │  │
+│  │      ├── producto .................................. [HECHO]            │  │
+│  │      ├── monto ..................................... [HECHO]            │  │
+│  │      ├── fecha_vencimiento .......................... [HECHO]            │  │
+│  │      ├── estado .................................... [HECHO]            │  │
+│  │      ├── recurrencia ................................ [HECHO]            │  │
+│  │      └── medio_pago ................................ [HECHO]            │  │
+│  │                                                                       │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  3. INTELIGENCIA FINANCIERA DERIVADA                                        │
+│                                                                             │
+│  Todo este bloque se obtiene a partir de los HECHOS anteriores.             │
+│  No todo necesariamente debe almacenarse permanentemente.                    │
+│                                                                             │
+│  ├── gasto_promedio_mensual .......................... [DATO DERIVADO]      │
+│  ├── ingreso_promedio ................................ [DATO DERIVADO]      │
+│  ├── ahorro_promedio ................................. [DATO DERIVADO]      │
+│  ├── gasto_por_categoría .............................. [DATO DERIVADO]      │
+│  ├── categoría_principal_de_gasto ..................... [DATO DERIVADO]      │
+│  ├── categoría_de_mayor_crecimiento ................... [DATO DERIVADO]      │
+│  ├── evolución_mensual_del_gasto ...................... [DATO DERIVADO]      │
+│  ├── comparación_con_periodos_anteriores .............. [DATO DERIVADO]      │
+│  ├── flujo_neto ....................................... [DATO DERIVADO]      │
+│  ├── capacidad_estimada_de_ahorro ..................... [DATO DERIVADO]      │
+│  ├── frecuencia_de_compra ............................. [DATO DERIVADO]      │
+│  ├── gastos_recurrentes ............................... [DATO DERIVADO]      │
+│  ├── suscripciones_detectadas ........................ [DATO DERIVADO]      │
+│  ├── utilización_del_crédito .......................... [DATO DERIVADO]      │
+│  ├── tendencia_de_ahorro ............................... [DATO DERIVADO]      │
+│  ├── tendencia_de_ingresos ............................ [DATO DERIVADO]      │
+│  ├── proporción_ingreso_gasto ........................ [DATO DERIVADO]      │
+│  ├── variación_del_gasto .............................. [DATO DERIVADO]      │
+│  ├── gasto_discrecional_vs_recurrente .................. [DATO DERIVADO]      │
+│  ├── concentración_del_gasto .......................... [DATO DERIVADO]      │
+│  ├── comportamiento_de_pago ........................... [DATO DERIVADO]      │
+│  └── progreso_de_objetivos ............................ [DATO DERIVADO]      │
+│                                                                              │
+│  IMPORTANTE:                                                                 │
+│  [DATO DERIVADO] ≠ [HECHO]                                                  │
+│  Es información calculada a partir de los hechos.                           │
+│                                                                              │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  4. OBJETIVOS E INTENCIONES DEL USUARIO                                      │
+│                                                                             │
+│  ├── OBJETIVO FINANCIERO                                                   │
+│  │   ├── objetivo_id ................................ [OBJETIVO / INTENCIÓN]│
+│  │   ├── tipo_objetivo ............................... [OBJETIVO / INTENCIÓN]│
+│  │   ├── nombre ..................................... [OBJETIVO / INTENCIÓN]│
+│  │   ├── cantidad_objetivo ........................... [OBJETIVO / INTENCIÓN]│
+│  │   ├── cantidad_actual ............................. [HECHO]              │
+│  │   ├── fecha_objetivo .............................. [OBJETIVO / INTENCIÓN]│
+│  │   ├── prioridad ................................... [OBJETIVO / INTENCIÓN]│
+│  │   └── estado ...................................... [HECHO / DERIVADO]    │
+│  │                                                                          │
+│  ├── TIPOS DE OBJETIVO                                                     │
+│  │   ├── ahorro ...................................... [OBJETIVO / INTENCIÓN]│
+│  │   ├── inversión ................................... [OBJETIVO / INTENCIÓN]│
+│  │   ├── compra futura ................................ [OBJETIVO / INTENCIÓN]│
+│  │   ├── reducción de deuda ........................... [OBJETIVO / INTENCIÓN]│
+│  │   ├── retiro ....................................... [OBJETIVO / INTENCIÓN]│
+│  │   └── reducción de gasto ........................... [OBJETIVO / INTENCIÓN]│
+│  │                                                                          │
+│  ├── INTENCIONES EXPLÍCITAS                                                 │
+│  │   ├── "Quiero comprar una casa" ................. [OBJETIVO / INTENCIÓN] │
+│  │   ├── "Quiero ahorrar $100,000" .................. [OBJETIVO / INTENCIÓN] │
+│  │   ├── "Quiero invertir para el retiro" ........... [OBJETIVO / INTENCIÓN] │
+│  │   └── "Quiero gastar menos en restaurantes" ....... [OBJETIVO / INTENCIÓN] │
+│  │                                                                          │
+│  |└── PREFERENCIAS DECLARADAS                                                │
+│  |   ├── preferencia_de_ahorro ........................ [OBJETIVO / INTENCIÓN]│
+│  |   ├── preferencia_de_inversión ...................... [OBJETIVO / INTENCIÓN]│
+│  |   ├── preferencia_de_productos ...................... [OBJETIVO / INTENCIÓN]│
+│  |   └── preferencia_de_riesgo_declarada ............... [OBJETIVO / INTENCIÓN]│
+│  |                                                                           │
+│  |___PREFERENCIAS ESTIMADAS                                                  |
+│     ├── preferencia_de_ahorro ........................ [DERIVADO]           │
+│     ├── preferencia_de_inversión ...................... [DERIVADO]          │
+│     ├── preferencia_de_productos ...................... [DERIVADO]          │
+│     └── preferencia_de_riesgo_declarada ............... [DERIVADO]          │
+|                                                                              |
+│                                                                              │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  5. PREFERENCIAS DE EXPERIENCIA                                             │
+│                                                                             │
+│  ├── preferencia_de_comunicación ....................... [HECHO]             │
+│  ├── nivel_de_detalle_preferido ........................ [HECHO]             │
+│  ├── formato_preferido ................................ [HECHO]             │
+│  ├── frecuencia_de_notificaciones ...................... [HECHO]             │
+│  └── preferencias_de_experiencia ....................... [HECHO]             │
+│                                                                              │
+│  Nota: Estas preferencias describen cómo quiere interactuar el usuario,      │
+│  no necesariamente su situación financiera.                                  │
+│                                                                              │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  6. CONTEXTO DE LA INTERACCIÓN ACTUAL                                       │
+│                                                                             │
+│  ├── sesión_id ....................................... [CONTEXTO]             │
+│  ├── timestamp ....................................... [CONTEXTO]             │
+│  ├── pantalla_actual ................................ [CONTEXTO]              │
+│  ├── producto_seleccionado ........................... [CONTEXTO]             │
+│  ├── cuenta_seleccionada ............................. [CONTEXTO]             │
+│  ├── tarjeta_seleccionada ........................... [CONTEXTO]             │
+│  ├── período_seleccionado ........................... [CONTEXTO]              │
+│  ├── filtros_activos ................................ [CONTEXTO]              │
+│  ├── última_acción ................................... [CONTEXTO]              │
+│  ├── interacción_anterior_relevante ................... [CONTEXTO]             │
+│  ├── tarea_actual .................................... [CONTEXTO]              │
+│  ├── intención_actual ................................ [CONTEXTO]              │
+│  ├── componentes_visibles ............................ [CONTEXTO]              │
+│  └── estado_actual_de_la_UI .......................... [CONTEXTO]              │
+│                                                                              │
+│  Este bloque NO representa la realidad financiera permanente del usuario.     │
+│  Representa lo que está ocurriendo AHORA.                                     │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
