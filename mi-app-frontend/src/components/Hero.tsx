@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="relative flex justify-center md:justify-end">
           <div className="absolute -inset-x-6 -inset-y-8 -z-10 bg-sand md:-inset-x-10" />
 
-          <div className="w-full max-w-sm -rotate-2 border border-ink/10 bg-gradient-to-br from-brick to-maroon p-6 text-white shadow-xl transition-transform hover:rotate-0">
+          <div className="w-full max-w-sm -rotate-4 rounded-xl border border-ink/10 bg-gradient-to-br from-brick to-maroon p-6 text-white shadow-xl transition-transform hover:rotate-4">
             <div className="flex items-start justify-between">
               <span className="font-display text-sm font-medium tracking-wide">
                 Rubí
