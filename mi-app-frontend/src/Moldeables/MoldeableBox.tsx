@@ -1,10 +1,5 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import TrustBar from "./components/Trustbar";
-import Products from "./components/Products";
-import Security from "./components/Security";
-import CTAFooter from "./components/CTAfooter";
-import Footer from "./components/Footer";
+import React, { useState, useRef, useCallback } from "react";
+
 
 interface Size {
   width: number;
@@ -15,7 +10,7 @@ type Direction = "right" | "bottom" | "corner";
 
 
 
-const ResizableBox: React.FC = () => {
+export default function ResizableBox() {
   const [size, setSize] = useState<Size>({ width: 300, height: 200 });
   const containerRef = useRef<HTMLDivElement>(null);
   const startPos = useRef({ x: 0, y: 0, width: 0, height: 0 });
@@ -64,15 +59,7 @@ const ResizableBox: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-paper">
-      <Navbar />
-      <Hero />
-      <TrustBar />
-      <Products />
-      <Security />
-      <CTAFooter />
-      <Footer />
-    </div>
+
     
     <div
       ref={containerRef}
@@ -130,6 +117,7 @@ const ResizableBox: React.FC = () => {
       />
     </div>
 
-    </>
   );
-}
+};
+
+export default ResizableBox;
