@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 //import Navbar from "./components/Navbar";
 //import Hero from "./components/Hero";
 //import TrustBar from "./components/Trustbar";
@@ -21,6 +22,8 @@ export default function App() {
   );
 }
 =======
+=======
+>>>>>>> 381d53c (FrontEndBase)
 import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
@@ -143,4 +146,7 @@ function App() {
 }
 
 export default App
+<<<<<<< HEAD
 >>>>>>> 0d46b38 (BorrandoLoInutil)
+=======
+>>>>>>> 381d53c (FrontEndBase)

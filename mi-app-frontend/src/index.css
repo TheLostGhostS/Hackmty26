@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 @import "tailwindcss";
 
@@ -91,6 +92,8 @@ body {
 ::selection {
   @apply bg-brick/20;
 =======
+=======
+>>>>>>> 381d53c (FrontEndBase)
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -201,5 +204,8 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+<<<<<<< HEAD
 >>>>>>> 0d46b38 (BorrandoLoInutil)
+=======
+>>>>>>> 381d53c (FrontEndBase)
 }
