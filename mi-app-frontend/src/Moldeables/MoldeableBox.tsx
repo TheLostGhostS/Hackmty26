@@ -128,6 +128,9 @@ export default function ResizableBox() {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 export default ResizableBox;
 >>>>>>> 6a31a97 (MoldeableBox)
+=======
+>>>>>>> c7ff4b8 (Boton)

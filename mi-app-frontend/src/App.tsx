@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //import Navbar from "./components/Navbar";
 //import Hero from "./components/Hero";
 //import TrustBar from "./components/Trustbar";
@@ -34,6 +35,9 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 =======
+=======
+import MoldeableBox from "./Moldeables/MoldeableBox";
+>>>>>>> c7ff4b8 (Boton)
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustBar from "./components/Trustbar";
@@ -41,6 +45,7 @@ import Products from "./components/Products";
 import Security from "./components/Security";
 import CTAFooter from "./components/CTAfooter";
 import Footer from "./components/Footer";
+<<<<<<< HEAD
 >>>>>>> f83c062 (First interface)
 
 export default function App() {
@@ -221,6 +226,13 @@ const ResizableBox: React.FC = () => {
   return (
     <><div className="min-h-screen bg-paper">
 >>>>>>> 6a31a97 (MoldeableBox)
+=======
+import Botones from "./Moldeables/Botones";
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-paper">
+>>>>>>> c7ff4b8 (Boton)
       <Navbar />
       <Hero />
       <TrustBar />
@@ -228,7 +240,10 @@ const ResizableBox: React.FC = () => {
       <Security />
       <CTAFooter />
       <Footer />
+      <MoldeableBox />
+      <Botones />
     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     
@@ -293,3 +308,7 @@ const ResizableBox: React.FC = () => {
   );
 }
 >>>>>>> f83c062 (First interface)
+=======
+  );
+}
+>>>>>>> c7ff4b8 (Boton)
