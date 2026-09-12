@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //import Navbar from "./components/Navbar";
 //import Hero from "./components/Hero";
 //import TrustBar from "./components/Trustbar";
@@ -32,8 +33,19 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+=======
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import TrustBar from "./components/Trustbar";
+import Products from "./components/Products";
+import Security from "./components/Security";
+import CTAFooter from "./components/CTAfooter";
+import Footer from "./components/Footer";
+>>>>>>> f83c062 (First interface)
 
+export default function App() {
   return (
+<<<<<<< HEAD
     <>
       <section id="center">
         <div className="hero">
@@ -150,3 +162,16 @@ export default App
 >>>>>>> 0d46b38 (BorrandoLoInutil)
 =======
 >>>>>>> 381d53c (FrontEndBase)
+=======
+    <div className="min-h-screen bg-paper">
+      <Navbar />
+      <Hero />
+      <TrustBar />
+      <Products />
+      <Security />
+      <CTAFooter />
+      <Footer />
+    </div>
+  );
+}
+>>>>>>> f83c062 (First interface)

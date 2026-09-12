@@ -12,14 +12,21 @@
   "dependencies": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@tailwindcss/vite": "^4.3.3",
     "lucide-react": "^1.45.0",
 =======
 >>>>>>> 0d46b38 (BorrandoLoInutil)
 =======
 >>>>>>> 381d53c (FrontEndBase)
+=======
+    "@tailwindcss/vite": "^4.3.3",
+    "lucide-react": "^1.45.0",
+>>>>>>> f83c062 (First interface)
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
