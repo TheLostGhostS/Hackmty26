@@ -60,8 +60,10 @@ export default function ResizableBox() {
 
   return (
 
+
     
     <div
+    id="Mbox"
       ref={containerRef}
       style={{
         width: size.width,

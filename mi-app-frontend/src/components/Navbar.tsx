@@ -6,6 +6,10 @@ const links = [
   { label: "Tarjetas", href: "#productos" },
   { label: "Seguridad", href: "#seguridad" },
   { label: "Sucursales", href: "#" },
+  { label: "Botones", href: "#botones"},
+  { label: "MBox", href: "#Mbox"},
+  { label: "MOpt", href: "#MOpt"},
+  { label: "SBXY", href: "#SBXY"},
 ];
 
 export default function Navbar() {
