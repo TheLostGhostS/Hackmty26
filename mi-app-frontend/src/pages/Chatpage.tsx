@@ -1,4 +1,5 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import Navbar from "../components/utils/Navbar";
 import Footer from "../components/utils/Footer";
 import ChatInput from "../components/utils/Chaininput";
@@ -30,6 +31,22 @@ export default function ChatPage() {
     } catch {
       // useA2UI ya expone el error para mostrarlo en pantalla.
     }
+=======
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import ChatInput from "../components/Chaininput";
+import QuickReplies from "../components/Quickreplies";
+
+const suggestions = ["Ver mi saldo 💸", "Reportar mi tarjeta 💳", "Hablar con alguien 🙋"];
+
+export default function ChatPage() {
+  const [started, setStarted] = useState(false);
+
+  const handleSend = (text: string) => {
+    if (!text.trim()) return;
+    setStarted(true);
+    // TODO: aquí conectas tu API/modelo real y empiezas a pintar mensajes.
+>>>>>>> 8836ec1 (Preparations for future architecture)
   };
 
   return (
@@ -37,6 +54,7 @@ export default function ChatPage() {
       <Navbar />
 
       <main className="relative flex flex-1 flex-col">
+<<<<<<< HEAD
         {/* Surface area: aparece al encogerse el hero del chat. */}
         <div
           className={`relative min-h-0 overflow-y-auto transition-[flex-grow] duration-700 ease-in-out ${
@@ -65,10 +83,21 @@ export default function ChatPage() {
                   void invokeAction(invocation).catch(() => undefined);
                 }}
               />
+=======
+
+        <div
+          className={`relative transition-all duration-700 ease-in-out ${started ? "grow" : "grow-0"
+            }`}
+        >
+          {started && (
+            <div className="mx-auto transition-all duration-700 ease-in-out w-full max-w-5xl px-4 py-6">
+              {/* Contenido futuro entre el navbar y el chat */}
+>>>>>>> 8836ec1 (Preparations for future architecture)
             </div>
           )}
         </div>
 
+<<<<<<< HEAD
         {/* Sticky desde el primer render: no hay salto static -> sticky. */}
         <div
           className={`sticky bottom-0 z-20 flex shrink-0 transition-all duration-700 ease-in-out ${
@@ -79,6 +108,17 @@ export default function ChatPage() {
         >
           <div className="relative flex w-full items-center justify-center">
             {!started && (
+=======
+        <div
+          className={`sticky grow-0  bottom-0 z-20 flex shrink-0 transition-all duration-700 ease-in-out ${started
+              ? "items-end bg-paper/95 px-4 py-4 backdrop-blur"
+              : "items-center justify-center overflow-hidden px-4 py-8"
+            }`}
+        >
+
+          <div className="relative flex w-full items-center justify-center">
+            {/*!started && (
+>>>>>>> 8836ec1 (Preparations for future architecture)
               <>
                 <span className="pointer-events-none absolute -top-28 left-[15%] h-56 w-56 animate-float rounded-full bg-blush blur-3xl" />
                 <span
@@ -86,7 +126,11 @@ export default function ChatPage() {
                   style={{ animationDelay: "1.4s" }}
                 />
               </>
+<<<<<<< HEAD
             )}
+=======
+            )*/}
+>>>>>>> 8836ec1 (Preparations for future architecture)
 
             <div className="relative w-full max-w-xl text-center">
               {!started && (
@@ -97,6 +141,7 @@ export default function ChatPage() {
                   >
                     ¿En qué te ayudamos hoy?
                   </h1>
+<<<<<<< HEAD
 
                   <p
                     className="animate-rise mt-2 text-ink/60"
@@ -104,10 +149,13 @@ export default function ChatPage() {
                   >
                     Pregúnta por tu saldo, tus tarjetas o lo que se te ocurra.
                   </p>
+=======
+>>>>>>> 8836ec1 (Preparations for future architecture)
                 </>
               )}
 
               <div
+<<<<<<< HEAD
                 className={started ? "w-full" : "animate-rise mt-8"}
                 style={!started ? { animationDelay: "210ms" } : undefined}
               >
@@ -115,6 +163,15 @@ export default function ChatPage() {
               </div>
 
               {!started && (
+=======
+                className={`${started ? "w-full" : "animate-rise mt-8"}`}
+                style={!started ? { animationDelay: "210ms" } : undefined}
+              >
+                <ChatInput onSend={handleSend} variant={started ? "dock" : "hero"} disabled={false} />
+              </div>
+
+              {/*!started && (
+>>>>>>> 8836ec1 (Preparations for future architecture)
                 <div className="mt-5">
                   <QuickReplies
                     suggestions={suggestions}
@@ -122,8 +179,15 @@ export default function ChatPage() {
                     baseDelayMs={280}
                   />
                 </div>
+<<<<<<< HEAD
               )}
             </div>
+=======
+              )*/}
+            </div>
+
+
+>>>>>>> 8836ec1 (Preparations for future architecture)
           </div>
         </div>
       </main>
@@ -131,4 +195,8 @@ export default function ChatPage() {
       <Footer />
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8836ec1 (Preparations for future architecture)
