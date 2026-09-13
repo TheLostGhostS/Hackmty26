@@ -1,6 +1,9 @@
+google-genai
+pydantic
+python-dotenv
+SQLAlchemy
+cloud-sql-python-connector[pytds]
+python-tds
+
 fastapi
 uvicorn[standard]
-pydantic
-google-genai
-python-dotenv
-pyodbc

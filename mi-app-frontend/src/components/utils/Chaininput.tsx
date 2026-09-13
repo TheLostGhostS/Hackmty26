@@ -13,6 +13,7 @@ export default function ChatInput({ onSend, variant = "hero", disabled=false }: 
   const isHero = variant === "hero";
 
   const handleSubmit = (e: FormEvent) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     e.preventDefault();
     const trimmed = value.trim();
     if (!trimmed) return;

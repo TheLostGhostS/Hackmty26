@@ -3,6 +3,7 @@ from google.genai import types
 
 from app.models.ui import UIResponse
 from app.tools.financial import (
+    obtener_resumen_financiero,
     consultar_saldo_tarjeta,
     aplicar_plan_reestructura,
     simular_pago_deuda,
@@ -64,7 +65,7 @@ chat = client.chats.create(
         system_instruction=instrucciones,
         response_mime_type="application/json",
         response_schema=UIResponse,
-        tools=[consultar_saldo_tarjeta, aplicar_plan_reestructura, simular_pago_deuda, evaluar_costo_oportunidad, liquidar_deuda_con_inversion],
+        tools=[obtener_resumen_financiero, consultar_saldo_tarjeta, aplicar_plan_reestructura, simular_pago_deuda, evaluar_costo_oportunidad, liquidar_deuda_con_inversion],
         temperature=0.0,
     ),
 
@@ -89,6 +90,7 @@ def _create_chat():
             response_mime_type="application/json",
             response_schema=UIResponse,
             tools=[
+                obtener_resumen_financiero,
                 consultar_saldo_tarjeta,
                 aplicar_plan_reestructura,
                 simular_pago_deuda,
