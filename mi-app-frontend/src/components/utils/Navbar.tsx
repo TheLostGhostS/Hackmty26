@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import LoginMenu from "../../pages/Login";
 import SingUpMenu from "../../pages/Singup";
+import logo from "../../assets/Banorte_logo.svg"
 
 const links = [
   { label: "Cuentas", href: "#productos" },
@@ -17,8 +18,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-ink/10">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2">
-          <span className="h-3 w-3 rounded-full bg-brick" />
-          <span className="font-display text-xl font-semibold tracking-tight">
+          <img src={logo} alt="Logo" className="h-5 w-auto" />
+          <span className="font-sans text-xl font-semibold tracking-tight">
             Banorte
           </span>
         </a>
