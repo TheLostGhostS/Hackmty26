@@ -16,10 +16,17 @@ cliente_gemini = genai.Client(
 
 app = FastAPI()
 
+class FinancialData(BaseModel):
+    saldo_total_disponible: Optional[float] = None
+    ingresos_totales: Optional[float] = None
+    numero_transacciones: Optional[int] = None
+
+
 class A2UIResponse(BaseModel):
     type: str
     title: Optional[str] = None
-    content: str
+    content: Optional[str] = None
+    data: Optional[FinancialData] = None
 
 # -------------------------
 # Modelo del mensaje
@@ -92,7 +99,10 @@ REGLAS IMPORTANTES:
 5. No inventes nombres, cantidades, objetivos, inversiones ni ninguna otra información.
 
 6. Para las herramientas utiliza user_id = 1.
+
+7. En "data" incluye únicamente saldo_total_disponible, ingresos_totales y numero_transacciones cuando estén disponibles.
 """
+
 
     respuesta = cliente_gemini.models.generate_content(
         model="gemini-3.5-flash-lite",
@@ -136,30 +146,34 @@ REGLAS IMPORTANTES:
         respuesta_final = cliente_gemini.models.generate_content(
             model="gemini-3.5-flash-lite",
             contents=f"""
-        El usuario preguntó:
+            El usuario preguntó:
 
-        {mensaje}
+            {mensaje}
 
-        La herramienta {llamada.name} devolvió este resultado:
+            La herramienta {llamada.name} devolvió este resultado:
 
-        {resultado}
+            {resultado}
 
-        Responde utilizando únicamente la información disponible.
+            Responde utilizando únicamente la información disponible.
 
-        Devuelve únicamente un JSON válido con esta estructura:
+            Devuelve únicamente un JSON válido con esta estructura:
 
-        {{
-            "type": "text",
-            "title": "Respuesta financiera",
-            "content": "respuesta clara para el usuario"
-        }}
+            {{
+                "type": "text",
+                "title": "Respuesta financiera",
+                "content": "respuesta clara para el usuario",
+                "data": {{}}
+            }}
 
-        Reglas:
-        - No inventes información.
-        - No agregues datos que no estén en el resultado.
-        - El campo "content" debe contener la respuesta que verá directamente el usuario.
-        - No utilices Markdown fuera del campo "content".
-        """,
+            Reglas:
+            - No inventes información.
+            - No agregues datos que no estén en el resultado de la herramienta.
+            - El campo "content" debe contener la respuesta que verá directamente el usuario.
+            - El campo "data" debe contener los datos estructurados relevantes obtenidos de la herramienta.
+            - Si la herramienta devuelve cantidades financieras, inclúyelas en "data".
+            - Si no hay datos estructurados relevantes, utiliza "data": {{}}.
+            - No utilices Markdown fuera del campo "content".
+            """,
             config={
                 "response_mime_type": "application/json",
                 "response_schema": A2UIResponse
