@@ -1,18 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 /* Botón desplegable de tamaño fijo (sin asas de resize).
-   Al presionar, muestra una lista de opciones debajo. */
+   Al presionar, muestra una lista de opciones debajo y
+   hace scroll automático para que la lista quede visible. */
 
 const OPTIONS = ["Opción 1", "Opción 2", "Opción 3", "Opción 4"];
 
 export default function DropdownButton() {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
+  const listRef = useRef(null);
+
+  // Cuando se abre, hace scroll para que toda la lista sea visible
+  useEffect(() => {
+    if (open && listRef.current) {
+      listRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [open]);
 
   return (
-    <div style={{ width: 200, userSelect: "none" }}>
+    <div style={{ width: 200, position: "relative", userSelect: "none" }}>
       <button
-       id="MOpt"
         onClick={() => setOpen((o) => !o)}
         style={{
           width: "100%",
@@ -47,14 +58,21 @@ export default function DropdownButton() {
 
       {open && (
         <ul
+          ref={listRef}
           style={{
-            marginTop: 6,
+            position: "absolute",
+            top: "calc(100% + 6px)",
+            left: 0,
+            width: "100%",
+            margin: 0,
             padding: 6,
             listStyle: "none",
             background: "#F1E9E1",
             border: "2px solid #9E0C24",
             borderRadius: 8,
             boxSizing: "border-box",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.12)",
+            zIndex: 20,
           }}
         >
           {OPTIONS.map((opt) => (
