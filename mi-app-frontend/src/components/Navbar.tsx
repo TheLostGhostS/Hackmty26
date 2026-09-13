@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import LoginMenu from "../pages/Login";
+import SingUpMenu from "../pages/Singup";
 
 const links = [
   { label: "Cuentas", href: "#productos" },
   { label: "Tarjetas", href: "#productos" },
   { label: "Seguridad", href: "#seguridad" },
   { label: "Sucursales", href: "#" },
-  { label: "Botones", href: "#botones"},
-  { label: "MBox", href: "#Mbox"},
-  { label: "MOpt", href: "#MOpt"},
-  { label: "SBXY", href: "#SBXY"},
 ];
 
 export default function Navbar() {
@@ -38,19 +36,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href="#"
-            className="text-sm font-medium text-ink/80 hover:text-ink"
-          >
-            Iniciar sesión
-          </a>
-          <a
-            href="#abrir-cuenta"
-            className="group flex items-center gap-1.5 rounded-none bg-brick px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brick-dark"
-          >
-            Abrir cuenta
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <LoginMenu />
+          <SingUpMenu />
         </div>
 
         <button
@@ -70,12 +57,8 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#abrir-cuenta"
-              className="mt-2 inline-flex items-center justify-center gap-1.5 bg-brick px-4 py-2.5 text-sm font-medium text-white"
-            >
-              Abrir cuenta
-            </a>
+            <LoginMenu />
+            <SingUpMenu />
           </div>
         </div>
       )}
