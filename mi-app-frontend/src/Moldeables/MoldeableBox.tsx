@@ -60,21 +60,10 @@ export default function ResizableBox() {
 
   return (
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 931b9c8 (id,moldeablesymas)
 
     
     <div
     id="Mbox"
-<<<<<<< HEAD
-=======
-    
-    <div
->>>>>>> 6a31a97 (MoldeableBox)
-=======
->>>>>>> 931b9c8 (id,moldeablesymas)
       ref={containerRef}
       style={{
         width: size.width,
@@ -133,10 +122,3 @@ export default function ResizableBox() {
   );
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-export default ResizableBox;
->>>>>>> 6a31a97 (MoldeableBox)
-=======
->>>>>>> c7ff4b8 (Boton)

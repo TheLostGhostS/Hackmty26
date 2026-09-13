@@ -1,33 +1,14 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import React, { useState, useRef, useEffect } from "react";
 
 /* Botón desplegable de tamaño fijo (sin asas de resize).
    Al presionar, muestra una lista de opciones debajo y
    hace scroll automático para que la lista quede visible. */
-=======
-import React, { useState } from "react";
-
-/* Botón desplegable de tamaño fijo (sin asas de resize).
-   Al presionar, muestra una lista de opciones debajo. */
->>>>>>> 931b9c8 (id,moldeablesymas)
-=======
-import React, { useState, useRef, useEffect } from "react";
-
-/* Botón desplegable de tamaño fijo (sin asas de resize).
-   Al presionar, muestra una lista de opciones debajo y
-   hace scroll automático para que la lista quede visible. */
->>>>>>> b99b3b5 (MasBases)
 
 const OPTIONS = ["Opción 1", "Opción 2", "Opción 3", "Opción 4"];
 
 export default function DropdownButton() {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b99b3b5 (MasBases)
   const listRef = useRef(null);
 
   // Cuando se abre, hace scroll para que toda la lista sea visible
@@ -39,23 +20,10 @@ export default function DropdownButton() {
       });
     }
   }, [open]);
-<<<<<<< HEAD
 
   return (
     <div style={{ width: 200, position: "relative", userSelect: "none" }}>
       <button
-=======
-=======
->>>>>>> b99b3b5 (MasBases)
-
-  return (
-    <div style={{ width: 200, position: "relative", userSelect: "none" }}>
-      <button
-<<<<<<< HEAD
-       id="MOpt"
->>>>>>> 931b9c8 (id,moldeablesymas)
-=======
->>>>>>> b99b3b5 (MasBases)
         onClick={() => setOpen((o) => !o)}
         style={{
           width: "100%",
@@ -90,8 +58,6 @@ export default function DropdownButton() {
 
       {open && (
         <ul
-<<<<<<< HEAD
-<<<<<<< HEAD
           ref={listRef}
           style={{
             position: "absolute",
@@ -99,35 +65,14 @@ export default function DropdownButton() {
             left: 0,
             width: "100%",
             margin: 0,
-=======
-          style={{
-            marginTop: 6,
->>>>>>> 931b9c8 (id,moldeablesymas)
-=======
-          ref={listRef}
-          style={{
-            position: "absolute",
-            top: "calc(100% + 6px)",
-            left: 0,
-            width: "100%",
-            margin: 0,
->>>>>>> b99b3b5 (MasBases)
             padding: 6,
             listStyle: "none",
             background: "#F1E9E1",
             border: "2px solid #9E0C24",
             borderRadius: 8,
             boxSizing: "border-box",
-<<<<<<< HEAD
-<<<<<<< HEAD
             boxShadow: "0 8px 16px rgba(0,0,0,0.12)",
             zIndex: 20,
-=======
->>>>>>> 931b9c8 (id,moldeablesymas)
-=======
-            boxShadow: "0 8px 16px rgba(0,0,0,0.12)",
-            zIndex: 20,
->>>>>>> b99b3b5 (MasBases)
           }}
         >
           {OPTIONS.map((opt) => (
@@ -154,12 +99,4 @@ export default function DropdownButton() {
       )}
     </div>
   );
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 931b9c8 (id,moldeablesymas)
-=======
-}
->>>>>>> b99b3b5 (MasBases)
