@@ -1,6 +1,9 @@
 import { useState, type FormEvent } from "react";
 import { ArrowUp, Sparkles } from "lucide-react";
+<<<<<<< HEAD
 import logo from "../../assets/Banorte_logo.svg"
+=======
+>>>>>>> 561abc0 (A2UI functional in theory)
 
 interface Props {
   onSend: (text: string) => void;
@@ -29,7 +32,11 @@ export default function ChatInput({ onSend, variant = "hero", disabled=false }: 
           : "border-ink/10 py-1.5 pl-5 pr-1.5 shadow-lg shadow-ink/5 focus-within:border-brick"
       }`}
     >
+<<<<<<< HEAD
       <img src={logo} alt="Logo" className={`h-4 ${isHero ? "opacity-80" : "opacity-70 "} w-auto`} />
+=======
+      {isHero && <Sparkles className="h-4 w-4 shrink-0 text-sunny" />}
+>>>>>>> 561abc0 (A2UI functional in theory)
 
       <input
         value={value}

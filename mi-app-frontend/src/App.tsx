@@ -17,6 +17,9 @@
 //import MoldeableBox from "./Moldeables/MoldeableBox";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 561abc0 (A2UI functional in theory)
 import ChatPage from "./pages/Chatpage"
 
 
