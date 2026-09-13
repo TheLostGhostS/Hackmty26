@@ -70,3 +70,38 @@ chat = client.chats.create(
 
 )
 
+
+
+# -----------------------------------------------------------------------------
+# Sesiones de chat para FastAPI
+# -----------------------------------------------------------------------------
+# El objeto `chat` de arriba se conserva intacto para el simulador CLI original.
+# FastAPI usa un chat independiente por user_id para no mezclar historiales.
+_api_chats = {}
+_api_chats_lock = __import__("threading").RLock()
+
+
+def _create_chat():
+    return client.chats.create(
+        model="gemini-3.5-flash-lite",
+        config=types.GenerateContentConfig(
+            system_instruction=instrucciones,
+            response_mime_type="application/json",
+            response_schema=UIResponse,
+            tools=[
+                consultar_saldo_tarjeta,
+                aplicar_plan_reestructura,
+                simular_pago_deuda,
+                evaluar_costo_oportunidad,
+                liquidar_deuda_con_inversion,
+            ],
+            temperature=0.0,
+        ),
+    )
+
+
+def get_chat(user_id: str):
+    with _api_chats_lock:
+        if user_id not in _api_chats:
+            _api_chats[user_id] = _create_chat()
+        return _api_chats[user_id]
