@@ -8,6 +8,11 @@ import Footer from "./components/Footer";
 import Botones from "./Moldeables/Botones";
 import SlideBarXY from "./Moldeables/SlideBarXY";
 import MultiOpt from "./Moldeables/MultiOpt" ;
+import AIBox from "./Moldeables/AIBox";
+import GraphB from "./Moldeables/GraphB";
+import GraphL from "./Moldeables/GraphL";
+import GraphP from "./Moldeables/GraphP";
+import Check from "./Moldeables/Check";
 
 export default function App() {
   return (
@@ -21,8 +26,13 @@ export default function App() {
       <Footer />
       <MoldeableBox />
       <Botones />
-      <SlideBarXY />
       <MultiOpt />
+      <SlideBarXY />
+      <AIBox />
+      <GraphB />
+      <GraphL />
+      <GraphP />
+      <Check />
     </div>
   );
 }
