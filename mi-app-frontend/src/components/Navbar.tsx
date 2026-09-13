@@ -21,7 +21,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-2">
           <span className="h-3 w-3 rounded-full bg-brick" />
           <span className="font-display text-xl font-semibold tracking-tight">
-            Rubí
+            Banorte
           </span>
         </a>
 
