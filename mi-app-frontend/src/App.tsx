@@ -9,7 +9,7 @@
 //import Botones from "./Moldeables/Botones";
 //import MoldeableBox from "./Moldeables/MoldeableBox";
 
-import ChatPage from "./pages/ChatPage"
+import ChatPage from "./pages/Chatpage"
 
 
 export default function App() {

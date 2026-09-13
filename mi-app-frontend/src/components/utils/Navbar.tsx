@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import LoginMenu from "../pages/Login";
-import SingUpMenu from "../pages/Singup";
+import LoginMenu from "../../pages/Login";
+import SingUpMenu from "../../pages/Singup";
 
 const links = [
   { label: "Cuentas", href: "#productos" },
