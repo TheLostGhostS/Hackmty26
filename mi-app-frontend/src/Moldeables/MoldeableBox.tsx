@@ -61,14 +61,20 @@ export default function ResizableBox() {
   return (
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 931b9c8 (id,moldeablesymas)
 
     
     <div
     id="Mbox"
+<<<<<<< HEAD
 =======
     
     <div
 >>>>>>> 6a31a97 (MoldeableBox)
+=======
+>>>>>>> 931b9c8 (id,moldeablesymas)
       ref={containerRef}
       style={{
         width: size.width,

@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 import React, { useState, useRef, useEffect } from "react";
 
 /* Botón desplegable de tamaño fijo (sin asas de resize).
    Al presionar, muestra una lista de opciones debajo y
    hace scroll automático para que la lista quede visible. */
+=======
+import React, { useState } from "react";
+
+/* Botón desplegable de tamaño fijo (sin asas de resize).
+   Al presionar, muestra una lista de opciones debajo. */
+>>>>>>> 931b9c8 (id,moldeablesymas)
 
 const OPTIONS = ["Opción 1", "Opción 2", "Opción 3", "Opción 4"];
 
 export default function DropdownButton() {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
+<<<<<<< HEAD
   const listRef = useRef(null);
 
   // Cuando se abre, hace scroll para que toda la lista sea visible
@@ -24,6 +32,13 @@ export default function DropdownButton() {
   return (
     <div style={{ width: 200, position: "relative", userSelect: "none" }}>
       <button
+=======
+
+  return (
+    <div style={{ width: 200, userSelect: "none" }}>
+      <button
+       id="MOpt"
+>>>>>>> 931b9c8 (id,moldeablesymas)
         onClick={() => setOpen((o) => !o)}
         style={{
           width: "100%",
@@ -58,6 +73,7 @@ export default function DropdownButton() {
 
       {open && (
         <ul
+<<<<<<< HEAD
           ref={listRef}
           style={{
             position: "absolute",
@@ -65,14 +81,21 @@ export default function DropdownButton() {
             left: 0,
             width: "100%",
             margin: 0,
+=======
+          style={{
+            marginTop: 6,
+>>>>>>> 931b9c8 (id,moldeablesymas)
             padding: 6,
             listStyle: "none",
             background: "#F1E9E1",
             border: "2px solid #9E0C24",
             borderRadius: 8,
             boxSizing: "border-box",
+<<<<<<< HEAD
             boxShadow: "0 8px 16px rgba(0,0,0,0.12)",
             zIndex: 20,
+=======
+>>>>>>> 931b9c8 (id,moldeablesymas)
           }}
         >
           {OPTIONS.map((opt) => (
@@ -99,4 +122,8 @@ export default function DropdownButton() {
       )}
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 931b9c8 (id,moldeablesymas)

@@ -228,6 +228,8 @@ const ResizableBox: React.FC = () => {
 >>>>>>> 6a31a97 (MoldeableBox)
 =======
 import Botones from "./Moldeables/Botones";
+import SlideBarXY from "./Moldeables/SlideBarXY";
+import MultiOpt from "./Moldeables/MultiOpt" ;
 
 export default function App() {
   return (
@@ -242,6 +244,11 @@ export default function App() {
       <Footer />
       <MoldeableBox />
       <Botones />
+<<<<<<< HEAD
+=======
+      <SlideBarXY />
+      <MultiOpt />
+>>>>>>> 931b9c8 (id,moldeablesymas)
     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
