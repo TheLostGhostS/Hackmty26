@@ -14,7 +14,6 @@ from datetime import date, datetime
 import atexit
 
 
-
 class Option(BaseModel):
     label: str
     value: str
@@ -91,14 +90,9 @@ class UIResponse(BaseModel):
         )
     )
 
-# Tu variable de sesión multiusuario (el "login")
 USER_ID_ACTUAL = None
-
-# Inicializamos el conector de Google Cloud
 connector = Connector()
-
-# Extraemos el nombre de la instancia desde el .env o lo ponemos directo (como mostraste)
-INSTANCE_CONNECTION_NAME = "t-cogency-435402-c6:us-central1:reto-banorte-db" # Asegúrate de que termine con la región y nombre correctos
+INSTANCE_CONNECTION_NAME = "t-cogency-435402-c6:us-central1:reto-banorte-db" 
 
 def get_connection():
     return connector.connect(
@@ -109,15 +103,10 @@ def get_connection():
         db=os.environ.get("DB_NAME"),
     )
 
-# Creamos el motor (Engine) que las herramientas MCP usarán
 engine = sqlalchemy.create_engine(
     "mssql+pytds://",
     creator=get_connection
 )
-
-
-
-# 2. Creamos las herramientas que el LLM podrá usar
 
 def consultar_saldo_tarjeta() -> dict:
     """Útil para obtener el saldo actual y la tasa de interés de la tarjeta de crédito del usuario."""
@@ -448,8 +437,6 @@ A) Si el usuario pide un diagnóstico general o resumen:
 La respuesta debe respetar estrictamente el esquema JSON proporcionado, sin excepciones ni preámbulos.
 """
 
-
-
 chat = client.chats.create(
     model="gemini-3.5-flash-lite",
     config=types.GenerateContentConfig(
@@ -461,8 +448,6 @@ chat = client.chats.create(
     ),
 
 )
-
-
 
 def simular_frontend():
     print("=== SIMULADOR GENUI + MCP INICIADO ===")
@@ -616,9 +601,6 @@ def simular_frontend():
                 print(f"\n[❌] Error inesperado: {e}")
                 break
 
-
-
 if __name__ == "__main__":
 
-    simular_frontend() 
-
+    simular_frontend()

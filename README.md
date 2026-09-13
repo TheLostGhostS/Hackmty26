@@ -1,4 +1,8 @@
 # Hackmty26
-Nuestro misero intento en ganar el reto banorte.
+Aplicacion de A2UI banorte con un MCP
+#
+# Especial para clientes a cualquier nivel que buscan educacion financiera:
+- Recomendaciones de ahorro y productos financieros (inversiones y seguros)
+- Control de finanzas personales evitar y rastrear consumo de cuenta 
+# 
 
-Cambio de prueba para aprender jaja salu3
