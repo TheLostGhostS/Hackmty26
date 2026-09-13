@@ -230,6 +230,11 @@ const ResizableBox: React.FC = () => {
 import Botones from "./Moldeables/Botones";
 import SlideBarXY from "./Moldeables/SlideBarXY";
 import MultiOpt from "./Moldeables/MultiOpt" ;
+import AIBox from "./Moldeables/AIBox";
+import GraphB from "./Moldeables/GraphB";
+import GraphL from "./Moldeables/GraphL";
+import GraphP from "./Moldeables/GraphP";
+import Check from "./Moldeables/Check";
 
 export default function App() {
   return (
@@ -245,10 +250,20 @@ export default function App() {
       <MoldeableBox />
       <Botones />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <SlideBarXY />
       <MultiOpt />
 >>>>>>> 931b9c8 (id,moldeablesymas)
+=======
+      <MultiOpt />
+      <SlideBarXY />
+      <AIBox />
+      <GraphB />
+      <GraphL />
+      <GraphP />
+      <Check />
+>>>>>>> b99b3b5 (MasBases)
     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
