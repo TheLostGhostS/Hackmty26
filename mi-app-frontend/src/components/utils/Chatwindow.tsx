@@ -10,10 +10,14 @@ const initialMessages: Message[] = [
     id: "welcome-1",
     role: "bot",
 <<<<<<< HEAD
+<<<<<<< HEAD
     text: "Puedo ayudarte con tu saldo, movimientos, tarjetas o conectarte con un asesor.",
 =======
     text: "Hola, soy el asistente de Rubí. Puedo ayudarte con tu saldo, movimientos, tarjetas o conectarte con un asesor.",
 >>>>>>> 561abc0 (A2UI functional in theory)
+=======
+    text: "Puedo ayudarte con tu saldo, movimientos, tarjetas o conectarte con un asesor.",
+>>>>>>> 858b780 (Banorte logo and likeness)
     time: "09:41",
   },
   {
@@ -80,10 +84,14 @@ export default function ChatWindow() {
         </span>
         <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <p className="font-display text-sm font-semibold text-ink">Agente Inteligente</p>
 =======
           <p className="font-display text-sm font-semibold text-ink">Asistente Rubí</p>
 >>>>>>> 561abc0 (A2UI functional in theory)
+=======
+          <p className="font-display text-sm font-semibold text-ink">Agente Inteligente</p>
+>>>>>>> 858b780 (Banorte logo and likeness)
           <p className="flex items-center gap-1 text-xs text-forest">
             <span className="h-1.5 w-1.5 rounded-full bg-forest" />
             En línea

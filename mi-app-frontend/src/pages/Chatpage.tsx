@@ -93,6 +93,7 @@ export default function ChatPage() {
               {loading && state.order.length === 0 && (
                 <div className="animate-pulse rounded-3xl border border-ink/10 bg-white/50 p-6 text-sm text-ink/50">
                   Se esta preparando la interfaz...
+<<<<<<< HEAD
                 </div>
               )}
 
@@ -130,6 +131,8 @@ export default function ChatPage() {
               {loading && state.order.length === 0 && (
                 <div className="animate-pulse rounded-3xl border border-ink/10 bg-white/50 p-6 text-sm text-ink/50">
                   Rubí está preparando la interfaz…
+=======
+>>>>>>> 858b780 (Banorte logo and likeness)
                 </div>
               )}
 
@@ -202,7 +205,6 @@ export default function ChatPage() {
             <div className="relative w-full max-w-xl text-center">
               {!started && (
                 <>
-                  <p className="animate-rise text-4xl">👋</p>
                   <h1
                     className="animate-rise mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl"
                     style={{ animationDelay: "70ms" }}
@@ -219,12 +221,16 @@ export default function ChatPage() {
                     style={{ animationDelay: "140ms" }}
                   >
 <<<<<<< HEAD
+<<<<<<< HEAD
                     Pregúnta por tu saldo, tus tarjetas o lo que se te ocurra.
                   </p>
 =======
 >>>>>>> 8836ec1 (Preparations for future architecture)
 =======
                     Pregúntale a Rubí por tu saldo, tus tarjetas o lo que se te ocurra.
+=======
+                    Pregúnta por tu saldo, tus tarjetas o lo que se te ocurra.
+>>>>>>> 858b780 (Banorte logo and likeness)
                   </p>
 >>>>>>> 561abc0 (A2UI functional in theory)
                 </>

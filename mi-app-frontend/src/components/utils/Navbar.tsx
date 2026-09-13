@@ -3,9 +3,13 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import LoginMenu from "../../pages/Login";
 import SingUpMenu from "../../pages/Singup";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import logo from "../../assets/Banorte_logo.svg"
 =======
 >>>>>>> 561abc0 (A2UI functional in theory)
+=======
+import logo from "../../assets/Banorte_logo.svg"
+>>>>>>> 858b780 (Banorte logo and likeness)
 
 const links = [
   { label: "Cuentas", href: "#productos" },
@@ -22,12 +26,17 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="flex items-center gap-2">
 <<<<<<< HEAD
+<<<<<<< HEAD
           <img src={logo} alt="Logo" className="h-5 w-auto" />
           <span className="font-sans text-xl font-semibold tracking-tight">
 =======
           <span className="h-3 w-3 rounded-full bg-brick" />
           <span className="font-display text-xl font-semibold tracking-tight">
 >>>>>>> 561abc0 (A2UI functional in theory)
+=======
+          <img src={logo} alt="Logo" className="h-5 w-auto" />
+          <span className="font-sans text-xl font-semibold tracking-tight">
+>>>>>>> 858b780 (Banorte logo and likeness)
             Banorte
           </span>
         </a>
