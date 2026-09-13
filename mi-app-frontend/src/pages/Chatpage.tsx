@@ -47,7 +47,7 @@ export default function ChatPage() {
             <div className="mx-auto w-full max-w-5xl px-4 py-6">
               {loading && state.order.length === 0 && (
                 <div className="animate-pulse rounded-3xl border border-ink/10 bg-white/50 p-6 text-sm text-ink/50">
-                  Rubí está preparando la interfaz…
+                  Se esta preparando la interfaz...
                 </div>
               )}
 
@@ -91,7 +91,6 @@ export default function ChatPage() {
             <div className="relative w-full max-w-xl text-center">
               {!started && (
                 <>
-                  <p className="animate-rise text-4xl">👋</p>
                   <h1
                     className="animate-rise mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl"
                     style={{ animationDelay: "70ms" }}
@@ -103,7 +102,7 @@ export default function ChatPage() {
                     className="animate-rise mt-2 text-ink/60"
                     style={{ animationDelay: "140ms" }}
                   >
-                    Pregúntale a Rubí por tu saldo, tus tarjetas o lo que se te ocurra.
+                    Pregúnta por tu saldo, tus tarjetas o lo que se te ocurra.
                   </p>
                 </>
               )}

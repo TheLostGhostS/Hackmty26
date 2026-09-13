@@ -42,7 +42,7 @@ export default function Hero() {
           <div className="w-full max-w-sm -rotate-4 rounded-xl border border-ink/10 bg-gradient-to-br from-brick to-maroon p-6 text-white shadow-xl transition-transform hover:rotate-4">
             <div className="flex items-start justify-between">
               <span className="font-display text-sm font-medium tracking-wide">
-                Rubí
+                Banorte
               </span>
               <Wifi className="h-5 w-5 rotate-90 opacity-80" />
             </div>
