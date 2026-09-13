@@ -7,6 +7,8 @@ import Security from "./components/Security";
 import CTAFooter from "./components/CTAfooter";
 import Footer from "./components/Footer";
 import Botones from "./Moldeables/Botones";
+import SlideBarXY from "./Moldeables/SlideBarXY";
+import MultiOpt from "./Moldeables/MultiOpt" ;
 
 export default function App() {
   return (
@@ -19,6 +21,9 @@ export default function App() {
       <CTAFooter />
       <Footer />
       <MoldeableBox />
+      <Botones />
+      <SlideBarXY />
+      <MultiOpt />
     </div>
   );
 }
