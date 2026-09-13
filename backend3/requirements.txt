@@ -1,0 +1,6 @@
+google-genai
+pydantic
+python-dotenv
+SQLAlchemy
+cloud-sql-python-connector[pytds]
+python-tds
