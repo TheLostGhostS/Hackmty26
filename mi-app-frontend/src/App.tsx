@@ -2,6 +2,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9db9053 (Tests)
 //import Navbar from "./components/Navbar";
 //import Hero from "./components/Hero";
 //import TrustBar from "./components/Trustbar";
@@ -13,6 +16,7 @@
 //import Botones from "./Moldeables/Botones";
 //import MoldeableBox from "./Moldeables/MoldeableBox";
 
+<<<<<<< HEAD
 import ChatPage from "./pages/Chatpage"
 
 
@@ -235,10 +239,15 @@ import GraphB from "./Moldeables/GraphB";
 import GraphL from "./Moldeables/GraphL";
 import GraphP from "./Moldeables/GraphP";
 import Check from "./Moldeables/Check";
+=======
+import ChatPage from "./pages/ChatPage"
+
+>>>>>>> 9db9053 (Tests)
 
 export default function App() {
   return (
     <div className="min-h-screen bg-paper">
+<<<<<<< HEAD
 >>>>>>> c7ff4b8 (Boton)
       <Navbar />
       <Hero />
@@ -264,6 +273,9 @@ export default function App() {
       <GraphP />
       <Check />
 >>>>>>> b99b3b5 (MasBases)
+=======
+      <ChatPage/>
+>>>>>>> 9db9053 (Tests)
     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
